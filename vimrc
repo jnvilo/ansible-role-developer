@@ -1,0 +1,7 @@
+call plug#begin('~/.vim/plugged')
+Plug 'pearofducks/ansible-vim'
+call plug#end()
+
+
+" Set tabstop, shiftwidth, and expandtab options for YAML files
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab

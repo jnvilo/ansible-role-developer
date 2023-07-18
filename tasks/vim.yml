@@ -1,0 +1,38 @@
+- name: ensure .vimrc exists
+  copy:
+    dest: "/home/{{dev_user}}/.vimrc"
+    src: vimrc
+    owner: "{{dev_user}}"
+    group: "{{dev_user}}"
+
+- name: ensure .vim directory exists
+  file:
+    path: "/home/{{dev_user}}/.vim}}"
+    state: directory
+    owner: "{{dev_user}}" 
+  
+
+- name: ensure .vim/autoload exists
+  file:
+    path: "/home/{{dev_user}}/.vim/autoload"
+    state: directory
+    owner: "{{dev_user}}"
+
+
+- name: debug me 
+  debug:
+    msg: "dev_user is {{dev_user}}" 
+
+- name: ebug path1
+  debug:
+    msg: "path1 is /home/{{dev_user}}/.vim/autoload/" 
+
+- name: Install vim-plug
+  get_url:
+    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    dest: "/home/{{dev_user}}/.vim/autoload/plug.vim"
+    mode: "0644"
+    owner: "{{dev_user}}"
+
+
+

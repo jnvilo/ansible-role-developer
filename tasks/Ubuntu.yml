@@ -1,0 +1,8 @@
+- name: Install packages
+  apt:
+   name:
+     - vim
+   state: present
+
+- name: Include vim 
+  include_tasks: vim.yml
